@@ -146,9 +146,24 @@
 				<div class="col-lg-4">
 					<div class="main-navigation flex-lg-right">
 						<div class="cart-widget">
-							<div class="login-block">
-								<a href="login-register.html" class="font-weight-bold">Đăng Nhập</a>
-								<br> <span>hoặc</span><a href="login-register.html">Đăng Ký</a>
+							<div class="login-block" style="font-size: 16px; width: 120px;">
+								<% 
+									Object firstName = session.getAttribute("firstName");
+									if(firstName == null) { %>
+										<a href="<c:url value="/login" />" class="font-weight-bold">Đăng Nhập</a>
+										<br> <span>hoặc</span><a href="<c:url value="/register" />">Đăng Ký</a>	
+								<%  } else { %>
+										<ul class="header-top-list">
+											<li class="dropdown-trigger language-dropdown"><a href=""><i class="icons-left fas fa-user"></i>
+			                                        <%= firstName %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
+			                                    <ul class="dropdown-box" style="width: 180px;">
+			                                        <li> <a href="">Thông tin tài khoản</a></li>
+			                                        <li> <a href="">Lịch sử mua hàng</a></li>
+			                                        <li> <a href="<c:url value="/logout" />">Đăng xuất</a></li>
+			                                    </ul>
+			                                </li>
+										</ul>
+								<%  }  %>															
 							</div>
 							<div class="cart-block">
 								<div class="cart-total">

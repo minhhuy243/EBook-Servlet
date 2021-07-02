@@ -10,12 +10,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import ebook.utils.UrlConst;
 
 @WebFilter(urlPatterns = "/*")
-public class AuthFilter implements Filter{
+public class EncodingFilter implements Filter{
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -23,22 +20,10 @@ public class AuthFilter implements Filter{
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		
-		String email = (String) req.getSession().getAttribute("email");
-		String path = req.getServletPath();		
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		chain.doFilter(request, response);
 		
-		if(email != null) {
-			if(path.equals(UrlConst.AUTH_LOGIN) || path.equals(UrlConst.AUTH_REGISTER)) {
-				resp.sendRedirect(req.getContextPath() + UrlConst.HOME);
-			} else {
-				chain.doFilter(request, response);
-			}
-		} else {
-			if(path.equals(UrlConst.SHOPPING_CHECKOUT)) {
-				resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
-			} else {
-				chain.doFilter(request, response);
-			}
-		}		
 	}
 	
 }

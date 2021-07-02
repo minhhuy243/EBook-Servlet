@@ -274,8 +274,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `First_Name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Phonenumber` varchar(12) CHARACTER SET utf8 DEFAULT NULL,
-  `Verification_Code` varchar(264) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Verified` int(11) DEFAULT NULL,
   PRIMARY KEY (`User_Id`),
   UNIQUE KEY `Email` (`Email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -284,9 +282,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`User_Id`, `Email`, `Password`, `Last_Name`, `First_Name`, `Address`, `Phonenumber`, `Verification_Code`, `Verified`) VALUES
-(1, 'admin@ebook.com', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', '', NULL, '', NULL, 1),
-(2, 'nnd@ebook.com', 'e3df5aea6b2ef20ba65e35811c38a43b', 'NND', NULL, NULL, '', NULL, 1),
-(3, 'lmh@ebook.com', '78bc33b76c96dd9b74f85db936aacc7f', 'LMH', NULL, NULL, '', NULL, 1);
+INSERT INTO `user` (`User_Id`, `Email`, `Password`, `Last_Name`, `First_Name`, `Address`, `Phonenumber`) VALUES
+(1, 'admin@ebook.com', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', '', NULL, ''),
+(2, 'nnd@ebook.com', 'e3df5aea6b2ef20ba65e35811c38a43b', 'NND', NULL, NULL, ''),
+(3, 'lmh@ebook.com', '78bc33b76c96dd9b74f85db936aacc7f', 'LMH', NULL, NULL, '');
 
 -- --------------------------------------------------------
