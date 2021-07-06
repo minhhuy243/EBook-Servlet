@@ -13,6 +13,7 @@ public class UrlConst {
 	
 	// PRODUCT
 	public static final String PRODUCT_LIST 		= "/product";
+	public static final String PRODUCT_LIST_SEARCH	= "/product/search";
 	public static final String PRODUCT_DETAIL 		= "/product/detail";
 	
 	// SHOPPING
