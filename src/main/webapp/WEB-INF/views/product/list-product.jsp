@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -13,12 +13,12 @@
 							<!-- Product View Mode -->
 							<div class="product-view-mode">
 								<a href="#" class="sorting-btn active" data-target="grid"><i
-									class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
-									data-target="grid-four"> <span class="grid-four-icon">
+										class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
+																	  data-target="grid-four"> <span class="grid-four-icon">
 										<i class="fas fa-grip-vertical"></i><i
-										class="fas fa-grip-vertical"></i>
+									class="fas fa-grip-vertical"></i>
 								</span>
-								</a> <a href="#" class="sorting-btn" data-target="list "><i
+							</a> <a href="#" class="sorting-btn" data-target="list "><i
 									class="fas fa-list"></i></a>
 							</div>
 						</div>
@@ -29,28 +29,28 @@
 							<div class="sorting-selection">
 								<span>Hiển thị:</span> <select
 									class="form-control nice-select sort-select">
-									<option value="" selected="selected">3</option>
-									<option value="">9</option>
-									<option value="">5</option>
-									<option value="">10</option>
-									<option value="">12</option>
-								</select>
+								<option value="" selected="selected">3</option>
+								<option value="">9</option>
+								<option value="">5</option>
+								<option value="">10</option>
+								<option value="">12</option>
+							</select>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
 							<div class="sorting-selection">
 								<span>Sắp xếp:</span> <select
 									class="form-control nice-select sort-select mr-0">
-									<option value="" selected="selected">Default Sorting</option>
-									<option value="">Sort By:Name (A - Z)</option>
-									<option value="">Sort By:Name (Z - A)</option>
-									<option value="">Sort By:Price (Low &gt; High)</option>
-									<option value="">Sort By:Price (High &gt; Low)</option>
-									<option value="">Sort By:Rating (Highest)</option>
-									<option value="">Sort By:Rating (Lowest)</option>
-									<option value="">Sort By:Model (A - Z)</option>
-									<option value="">Sort By:Model (Z - A)</option>
-								</select>
+								<option value="" selected="selected">Default Sorting</option>
+								<option value="">Sort By:Name (A - Z)</option>
+								<option value="">Sort By:Name (Z - A)</option>
+								<option value="">Sort By:Price (Low &gt; High)</option>
+								<option value="">Sort By:Price (High &gt; Low)</option>
+								<option value="">Sort By:Rating (Highest)</option>
+								<option value="">Sort By:Rating (Lowest)</option>
+								<option value="">Sort By:Model (A - Z)</option>
+								<option value="">Sort By:Model (Z - A)</option>
+							</select>
 							</div>
 						</div>
 					</div>
@@ -61,12 +61,12 @@
 							<!-- Product View Mode -->
 							<div class="product-view-mode">
 								<a href="#" class="sorting-btn active" data-target="grid"><i
-									class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
-									data-target="grid-four"> <span class="grid-four-icon">
+										class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
+																	  data-target="grid-four"> <span class="grid-four-icon">
 										<i class="fas fa-grip-vertical"></i><i
-										class="fas fa-grip-vertical"></i>
+									class="fas fa-grip-vertical"></i>
 								</span>
-								</a> <a href="#" class="sorting-btn" data-target="list "><i
+							</a> <a href="#" class="sorting-btn" data-target="list "><i
 									class="fas fa-list"></i></a>
 							</div>
 						</div>
@@ -77,33 +77,33 @@
 							<div class="sorting-selection">
 								<span>Hiển thị:</span> <select
 									class="form-control nice-select sort-select">
-									<option value="" selected="selected">3</option>
-									<option value="">9</option>
-									<option value="">5</option>
-									<option value="">10</option>
-									<option value="">12</option>
-								</select>
+								<option value="" selected="selected">3</option>
+								<option value="">9</option>
+								<option value="">5</option>
+								<option value="">10</option>
+								<option value="">12</option>
+							</select>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
 							<div class="sorting-selection">
 								<span>Sắp xếp:</span> <select
 									class="form-control nice-select sort-select mr-0">
-									<option value="" selected="selected">Default Sorting</option>
-									<option value="">Sort By:Name (A - Z)</option>
-									<option value="">Sort By:Name (Z - A)</option>
-									<option value="">Sort By:Price (Low &gt; High)</option>
-									<option value="">Sort By:Price (High &gt; Low)</option>
-									<option value="">Sort By:Rating (Highest)</option>
-									<option value="">Sort By:Rating (Lowest)</option>
-									<option value="">Sort By:Model (A - Z)</option>
-									<option value="">Sort By:Model (Z - A)</option>
-								</select>
+								<option value="" selected="selected">Default Sorting</option>
+								<option value="">Sort By:Name (A - Z)</option>
+								<option value="">Sort By:Name (Z - A)</option>
+								<option value="">Sort By:Price (Low &gt; High)</option>
+								<option value="">Sort By:Price (High &gt; Low)</option>
+								<option value="">Sort By:Rating (Highest)</option>
+								<option value="">Sort By:Rating (Lowest)</option>
+								<option value="">Sort By:Model (A - Z)</option>
+								<option value="">Sort By:Model (Z - A)</option>
+							</select>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="shop-product-wrap grid with-pagination row space-db--30 shop-border">
 
 					<c:forEach items="${productList}" var="product">
@@ -128,7 +128,7 @@
 															class="fas fa-shopping-basket"></i>
 													</a>
 													<a href="wishlist.html" class="single-btn"> <i
-														class="fas fa-heart"></i>
+															class="fas fa-heart"></i>
 													</a>
 												</div>
 											</div>
@@ -146,40 +146,40 @@
 					</c:forEach>
 
 				</div>
-				
+
 				<!-- Pagination Block -->
 				<div class="row pt--30">
 					<div class="col-md-12">
 						<div class="pagination-block">
 							<ul class="pagination-btns flex-center">
 								<li>
-									<a href="<c:url value="/product" />" class="single-btn prev-btn ">
+									<a href="<c:url value="/product?${view}" />" class="single-btn prev-btn ">
 										|<i class="zmdi zmdi-chevron-left"></i>
 									</a>
 								</li>
 
 								<%
 									if(Integer.parseInt(request.getAttribute("currentPage").toString()) == 1) { %>
-										<li>
-											<a class="single-btn prev-btn ">
-												<i class="zmdi zmdi-chevron-left"></i>
-											</a>
-										</li>
+								<li>
+									<a class="single-btn prev-btn ">
+										<i class="zmdi zmdi-chevron-left"></i>
+									</a>
+								</li>
 								<%	} else { %>
-										<li>
-											<a href="<c:url value="/product?page=" />${currentPage - 1 }" class="single-btn prev-btn ">
-												<i class="zmdi zmdi-chevron-left"></i>
-											</a>
-										</li>
+								<li>
+									<a href="<c:url value="/product?${view}page=" />${currentPage - 1 }" class="single-btn prev-btn ">
+										<i class="zmdi zmdi-chevron-left"></i>
+									</a>
+								</li>
 								<%  } %>
 
 								<%
 									for(int i = 1; i <= Integer.parseInt(request.getAttribute("totalPage").toString()); i++) {
 										if(i == Integer.parseInt(request.getAttribute("currentPage").toString())) { %>
-											<li class="active"><a href="<c:url value="/product?page=" /><%= i %>" class="single-btn"><%= i %></a></li>
+								<li class="active"><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
 								<%
-										} else { %>
-											<li><a href="<c:url value="/product?page=" /><%= i %>" class="single-btn"><%= i %></a></li>
+								} else { %>
+								<li><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
 								<%
 										}
 									}
@@ -187,22 +187,22 @@
 
 
 								<%
-									if(request.getAttribute("currentPage").equals(request.getAttribute("totalPage"))) { %>
-										<li>
-											<a class="single-btn next-btn ">
-												<i class="zmdi zmdi-chevron-right"></i>
-											</a>
-										</li>
+									if(Integer.parseInt(request.getAttribute("currentPage").toString()) == Integer.parseInt(request.getAttribute("totalPage").toString())) { %>
+								<li>
+									<a class="single-btn next-btn ">
+										<i class="zmdi zmdi-chevron-right"></i>
+									</a>
+								</li>
 								<%	} else { %>
-										<li>
-											<a href="<c:url value="/product?page=" />${currentPage + 1 }" class="single-btn next-btn ">
-												<i class="zmdi zmdi-chevron-right"></i>
-											</a>
-										</li>
+								<li>
+									<a href="<c:url value="/product?${view}page=" />${currentPage + 1 }" class="single-btn next-btn ">
+										<i class="zmdi zmdi-chevron-right"></i>
+									</a>
+								</li>
 								<%  } %>
 
 								<li>
-									<a href="<c:url value="/product?page=" />${totalPage}" class="single-btn next-btn ">
+									<a href="<c:url value="/product?${view}page=" />${totalPage}" class="single-btn next-btn ">
 										<i class="zmdi zmdi-chevron-right"></i>|
 									</a>
 								</li>
@@ -218,18 +218,21 @@
 					<div class="single-block">
 						<h3 class="sidebar-title">Loại Sách</h3>
 						<ul class="sidebar-menu--shop">
-							<li><a href="">Tiểu thuyết</a></li>
-							<li><a href="">Văn Học</a></li>														
+							<c:forEach items="${categoryList}" var="category">
+								<li><a href="<c:url value="?filter=${category.id}" />">${category.name}</a></li>
+							</c:forEach>
 						</ul>
 					</div>
-			
+
 					<!-- Size -->
 					<div class="single-block">
 						<h3 class="sidebar-title">Nhà Xuất Bản</h3>
 						<ul class="sidebar-menu--shop menu-type-2">
-							<li><a href="">Nhà Xuất Bản Giáo Dục</a></li>
+							<c:forEach items="${publishingCompanyList}" var="publishingCompany">
+								<li><a href="<c:url value="?filter=${publishingCompany.id}" />">${publishingCompany.name}</a></li>
+							</c:forEach>
 						</ul>
-					</div>								
+					</div>
 				</div>
 			</div>
 		</div>

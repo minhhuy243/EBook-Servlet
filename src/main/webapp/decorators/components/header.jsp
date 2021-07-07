@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="site-header d-none d-lg-block">
@@ -8,9 +8,9 @@
 			<div class="row align-items-center">
 				<div class="col-lg-3 ">
 					<a href="<c:url value="" />" class="site-brand"> <img
-						src="<c:url value="/assets/image/logo.png"/>" alt="">
+							src="<c:url value="/assets/image/logo.png"/>" alt="">
 					</a>
-				</div>			
+				</div>
 				<div class="col-lg-3">
 					<div class="header-phone ">
 						<div class="icon">
@@ -22,23 +22,23 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-lg-6">
 					<div class="main-navigation flex-lg-right">
 						<ul class="main-menu menu-right ">
 							<li class="menu-item">
-                            	<a href="<c:url value="" />">Trang chủ</a>                              
-                           	</li>
-                           	<li class="menu-item">
-                            	<a href="<c:url value="/product" />">Sản phẩm</a>                              
-                           	</li>
-                           	<li class="menu-item">
-                            	<a href="<c:url value="" />">Liên hệ</a>                              
-                           	</li>
+								<a href="<c:url value="" />">Trang chủ</a>
+							</li>
+							<li class="menu-item">
+								<a href="<c:url value="/product" />">Sản phẩm</a>
+							</li>
+							<li class="menu-item">
+								<a href="<c:url value="" />">Liên hệ</a>
+							</li>
 						</ul>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -49,10 +49,10 @@
 					<nav class="category-nav   ">
 						<div>
 							<a href="javascript:void(0)" class="category-trigger"><i
-								class="fa fa-bars"></i>Danh mục sản phẩm</a>
+									class="fa fa-bars"></i>Danh mục sản phẩm</a>
 							<ul class="category-menu">
 								<li class="cat-item has-children"><a href="#">Arts &
-										Photography</a>
+									Photography</a>
 									<ul class="sub-menu">
 										<li><a href="#">Bags & Cases</a></li>
 										<li><a href="#">Binoculars & Scopes</a></li>
@@ -104,7 +104,7 @@
 										</li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Business
-										& Money</a>
+									& Money</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -119,7 +119,7 @@
 										<li><a href="">Spools</a></li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Children's
-										Books</a>
+									Books</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -144,40 +144,42 @@
 								<li class="cat-item "><a href="#">Accessories</a></li>
 								<li class="cat-item "><a href="#">Education</a></li>
 								<li class="cat-item hidden-menu-item"><a href="#">Indoor
-										Living</a></li>
+									Living</a></li>
 								<li class="cat-item"><a href="#"
-									class="js-expand-hidden-menu">More Categories</a></li>
+														class="js-expand-hidden-menu">More Categories</a></li>
 							</ul>
 						</div>
 					</nav>
 				</div>
 				<div class="col-lg-5">
-					<div class="header-search-block">
-						<input type="text" placeholder="Tìm kiếm sách mong muốn ...">
-						<button>Tìm Kiếm</button>
-					</div>
+					<form method="GET" action="/EBook/product">
+						<div class="header-search-block">
+							<input  name="search" type="text" placeholder="Tìm kiếm sách mong muốn ...">
+							<button type="submit">Tìm Kiếm</button>
+						</div>
+					</form>
 				</div>
 				<div class="col-lg-4">
 					<div class="main-navigation flex-lg-right">
 						<div class="cart-widget">
 							<div class="login-block" style="font-size: 16px; width: 120px;">
-								<% 
+								<%
 									Object firstName = session.getAttribute("firstName");
 									if(firstName == null) { %>
-										<a href="<c:url value="/login" />" class="font-weight-bold">Đăng Nhập</a>
-										<br> <span>hoặc</span><a href="<c:url value="/register" />">Đăng Ký</a>	
+								<a href="<c:url value="/login" />" class="font-weight-bold">Đăng Nhập</a>
+								<br> <span>hoặc</span><a href="<c:url value="/register" />">Đăng Ký</a>
 								<%  } else { %>
-										<ul class="header-top-list">
-											<li class="dropdown-trigger language-dropdown"><a href=""><i class="icons-left fas fa-user"></i>
-			                                        <%= firstName %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
-			                                    <ul class="dropdown-box" style="width: 180px;">
-			                                        <li> <a href="">Thông tin tài khoản</a></li>
-			                                        <li> <a href="">Lịch sử mua hàng</a></li>
-			                                        <li> <a href="<c:url value="/logout" />">Đăng xuất</a></li>
-			                                    </ul>
-			                                </li>
+								<ul class="header-top-list">
+									<li class="dropdown-trigger language-dropdown"><a href=""><i class="icons-left fas fa-user"></i>
+										<%= firstName %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
+										<ul class="dropdown-box" style="width: 180px;">
+											<li> <a href="">Thông tin tài khoản</a></li>
+											<li> <a href="">Lịch sử mua hàng</a></li>
+											<li> <a href="<c:url value="/logout" />">Đăng xuất</a></li>
 										</ul>
-								<%  }  %>															
+									</li>
+								</ul>
+								<%  }  %>
 							</div>
 							<div class="cart-block">
 								<div class="cart-total">
@@ -190,7 +192,7 @@
 									<div class=" single-cart-block ">
 										<div class="cart-product">
 											<a href="product-details.html" class="image"> <img
-												src="image/products/cart-product-1.jpg" alt="">
+													src="image/products/cart-product-1.jpg" alt="">
 											</a>
 											<div class="content">
 												<h3 class="title">
@@ -208,10 +210,10 @@
 									</div>
 									<div class=" single-cart-block ">
 										<div class="btn-block">
-											<a href="cart.html" class="btn">Xem Giỏ Hàng 
+											<a href="cart.html" class="btn">Xem Giỏ Hàng
 												<i class="fas fa-chevron-right"></i>
-											</a> 
-											<a href="checkout.html" class="btn btn--primary">Thanh Toán 
+											</a>
+											<a href="checkout.html" class="btn btn--primary">Thanh Toán
 												<i class="fas fa-chevron-right"></i>
 											</a>
 										</div>
@@ -231,17 +233,17 @@
 			<div class="row align-items-sm-end align-items-center">
 				<div class="col-md-4 col-7">
 					<a href="index.html" class="site-brand"> <img
-						src="image/logo.png" alt="">
+							src="image/logo.png" alt="">
 					</a>
 				</div>
 				<div class="col-md-5 order-3 order-md-2">
 					<nav class="category-nav   ">
 						<div>
 							<a href="javascript:void(0)" class="category-trigger"><i
-								class="fa fa-bars"></i>Browse categories</a>
+									class="fa fa-bars"></i>Browse categories</a>
 							<ul class="category-menu">
 								<li class="cat-item has-children"><a href="#">Arts &
-										Photography</a>
+									Photography</a>
 									<ul class="sub-menu">
 										<li><a href="#">Bags & Cases</a></li>
 										<li><a href="#">Binoculars & Scopes</a></li>
@@ -293,7 +295,7 @@
 										</li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Business
-										& Money</a>
+									& Money</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -308,7 +310,7 @@
 										<li><a href="">Spools</a></li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Children's
-										Books</a>
+									Books</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -333,9 +335,9 @@
 								<li class="cat-item "><a href="#">Accessories</a></li>
 								<li class="cat-item "><a href="#">Education</a></li>
 								<li class="cat-item hidden-menu-item"><a href="#">Indoor
-										Living</a></li>
+									Living</a></li>
 								<li class="cat-item"><a href="#"
-									class="js-expand-hidden-menu">More Categories</a></li>
+														class="js-expand-hidden-menu">More Categories</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -344,9 +346,9 @@
 					<div class="mobile-header-btns header-top-widget">
 						<ul class="header-links">
 							<li class="sin-link"><a href="cart.html"
-								class="cart-link link-icon"><i class="ion-bag"></i></a></li>
+													class="cart-link link-icon"><i class="ion-bag"></i></a></li>
 							<li class="sin-link"><a href="javascript:"
-								class="link-icon hamburgur-icon off-canvas-btn"><i
+													class="link-icon hamburgur-icon off-canvas-btn"><i
 									class="ion-navicon"></i></a></li>
 						</ul>
 					</div>
@@ -386,77 +388,77 @@
 						<li class="menu-item-has-children"><a href="#">Blog</a>
 							<ul class="sub-menu">
 								<li class="menu-item-has-children"><a href="#">Blog
-										Grid</a>
+									Grid</a>
 									<ul class="sub-menu">
 										<li><a href="blog.html">Full Widh (Default)</a></li>
 										<li><a href="blog-left-sidebar.html">left Sidebar</a></li>
 										<li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Blog
-										List</a>
+									List</a>
 									<ul class="sub-menu">
 										<li><a href="blog-list.html">Full Widh (Default)</a></li>
 										<li><a href="blog-list-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="blog-list-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Blog
-										Details</a>
+									Details</a>
 									<ul class="sub-menu">
 										<li><a href="blog-details.html">Image Format
-												(Default)</a></li>
+											(Default)</a></li>
 										<li><a href="blog-details-gallery.html">Gallery
-												Format</a></li>
+											Format</a></li>
 										<li><a href="blog-details-audio.html">Audio Format</a></li>
 										<li><a href="blog-details-video.html">Video Format</a></li>
 										<li><a href="blog-details-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 							</ul></li>
 						<li class="menu-item-has-children"><a href="#">Shop</a>
 							<ul class="sub-menu">
 								<li class="menu-item-has-children"><a href="#">Shop
-										Grid</a>
+									Grid</a>
 									<ul class="sub-menu">
 										<li><a href="shop-grid.html">Fullwidth</a></li>
 										<li><a href="shop-grid-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="shop-grid-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Shop
-										List</a>
+									List</a>
 									<ul class="sub-menu">
 										<li><a href="shop-list.html">Fullwidth</a></li>
 										<li><a href="shop-list-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="shop-list-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Product
-										Details 1</a>
+									Details 1</a>
 									<ul class="sub-menu">
 										<li><a href="product-details.html">Product Details
-												Page</a></li>
+											Page</a></li>
 										<li><a href="product-details-affiliate.html">Product
-												Details Affiliate</a></li>
+											Details Affiliate</a></li>
 										<li><a href="product-details-group.html">Product
-												Details Group</a></li>
+											Details Group</a></li>
 										<li><a href="product-details-variable.html">Product
-												Details Variables</a></li>
+											Details Variables</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Product
-										Details 2</a>
+									Details 2</a>
 									<ul class="sub-menu">
 										<li><a href="product-details-left-thumbnail.html">left
-												Thumbnail</a></li>
+											Thumbnail</a></li>
 										<li><a href="product-details-right-thumbnail.html">Right
-												Thumbnail</a></li>
+											Thumbnail</a></li>
 										<li><a href="product-details-left-gallery.html">Left
-												Gallery</a></li>
+											Gallery</a></li>
 										<li><a href="product-details-right-gallery.html">Right
-												Gallery</a></li>
+											Gallery</a></li>
 									</ul></li>
 							</ul></li>
 						<li class="menu-item-has-children"><a href="#">Pages</a>
@@ -480,7 +482,7 @@
 			<nav class="off-canvas-nav">
 				<ul class="mobile-menu menu-block-2">
 					<li class="menu-item-has-children"><a href="#">Currency -
-							USD $ <i class="fas fa-angle-down"></i>
+						USD $ <i class="fas fa-angle-down"></i>
 					</a>
 						<ul class="sub-menu">
 							<li><a href="cart.html">USD $</a></li>
@@ -493,7 +495,7 @@
 							<li>Ban</li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="#">My Account
-							<i class="fas fa-angle-down"></i>
+						<i class="fas fa-angle-down"></i>
 					</a>
 						<ul class="sub-menu">
 							<li><a href="">My Account</a></li>
@@ -527,21 +529,21 @@
 		<div class="row align-items-center">
 			<div class="col-lg-4">
 				<a href="<c:url value="" />" class="site-brand"> <img
-					src="<c:url value="/assets/image/logo.png"/>" alt="">
+						src="<c:url value="/assets/image/logo.png"/>" alt="">
 				</a>
 			</div>
 			<div class="col-lg-8">
 				<div class="main-navigation flex-lg-right">
 					<ul class="main-menu menu-right ">
 						<li class="menu-item">
-                            	<a href="<c:url value="" />">Trang chủ</a>                              
-                           	</li>
-                           	<li class="menu-item">
-                            	<a href="<c:url value="/product" />">Sản phẩm</a>                              
-                           	</li>
-                           	<li class="menu-item">
-                            	<a href="<c:url value="" />">Liên hệ</a>                              
-                           	</li>											
+							<a href="<c:url value="" />">Trang chủ</a>
+						</li>
+						<li class="menu-item">
+							<a href="<c:url value="/product" />">Sản phẩm</a>
+						</li>
+						<li class="menu-item">
+							<a href="<c:url value="" />">Liên hệ</a>
+						</li>
 					</ul>
 				</div>
 			</div>

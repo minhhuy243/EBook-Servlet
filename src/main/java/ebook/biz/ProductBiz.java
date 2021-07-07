@@ -21,23 +21,63 @@ public class ProductBiz {
         publishingCompanyDao = new PublishingCompanyDao();
     }
 
+    public List<Category> findAllCategory() {
+        return categoryDao.findAll();
+    }
+
+    public List<PublishingCompany> findAllPublishing() {
+        return publishingCompanyDao.findAll();
+    }
+
     public int countAll(){
         return productDao.countAll();
     }
 
-    public List<Product> findForPagination(int offset, int limit) {
-        List<Product> productList = productDao.findForPagination(offset, limit);
+    public List<Product> findAll(int offset, int limit) {
+        List<Product> productList = productDao.findAll(offset, limit);
 
-        for(Product product : productList) {
-            String categoryId = product.getCategory().getId();
-            Category category = categoryDao.findById(categoryId);
-            product.getCategory().setName(category.getName());
-
-            int publishingCompanyId = product.getPublishingCompany().getId();
-            PublishingCompany publishingCompany = publishingCompanyDao.findById(publishingCompanyId);
-            product.getPublishingCompany().setName(publishingCompany.getName());
-        }
+//        for(Product product : productList) {
+//            String categoryId = product.getCategory().getId();
+//            Category category = categoryDao.findById(categoryId);
+//            product.getCategory().setName(category.getName());
+//
+//            int publishingCompanyId = product.getPublishingCompany().getId();
+//            PublishingCompany publishingCompany = publishingCompanyDao.findById(publishingCompanyId);
+//            product.getPublishingCompany().setName(publishingCompany.getName());
+//        }
 
         return productList;
     }
+
+    public int countByName(String name){
+        return productDao.countByName(name);
+    }
+
+    public List<Product> findByName(String name, int offset, int limit) {
+        return productDao.findByName(name, offset, limit);
+    }
+
+    public int countByCategoryOrPublishing(String categoryId){
+        return productDao.countByCategoryOrPublishing(categoryId);
+    }
+
+    public List<Product> findByCategoryOrPublishing(String categoryId, int offset, int limit) {
+        return productDao.findByCategoryOrPublishing(categoryId, offset, limit);
+    }
+
+    // Detail Product
+    public Product findById(int id) {
+        Product product = productDao.findById(id);
+
+        String categoryId = product.getCategory().getId();
+        Category category = categoryDao.findById(categoryId);
+        product.getCategory().setName(category.getName());
+
+        int publishingCompanyId = product.getPublishingCompany().getId();
+        PublishingCompany publishingCompany = publishingCompanyDao.findById(publishingCompanyId);
+        product.getPublishingCompany().setName(publishingCompany.getName());
+
+        return product;
+    }
+
 }
