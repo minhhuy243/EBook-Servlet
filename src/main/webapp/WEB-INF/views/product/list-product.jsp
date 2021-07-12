@@ -124,11 +124,11 @@
 														src="<c:url value="/assets/"/>${product.avatar}" alt="">
 												</a>
 												<div class="hover-btns">
-													<a href="cart.html" class="single-btn"> <i
+													<a data-id="${product.id}" class="single-btn"> <i
 															class="fas fa-shopping-basket"></i>
 													</a>
-													<a href="wishlist.html" class="single-btn"> <i
-															class="fas fa-heart"></i>
+													<a href="#" class="single-btn"> <i
+														class="fas fa-heart"></i>
 													</a>
 												</div>
 											</div>
@@ -160,26 +160,26 @@
 
 								<%
 									if(Integer.parseInt(request.getAttribute("currentPage").toString()) == 1) { %>
-								<li>
-									<a class="single-btn prev-btn ">
-										<i class="zmdi zmdi-chevron-left"></i>
-									</a>
-								</li>
+										<li>
+											<a class="single-btn prev-btn ">
+												<i class="zmdi zmdi-chevron-left"></i>
+											</a>
+										</li>
 								<%	} else { %>
-								<li>
-									<a href="<c:url value="/product?${view}page=" />${currentPage - 1 }" class="single-btn prev-btn ">
-										<i class="zmdi zmdi-chevron-left"></i>
-									</a>
-								</li>
+										<li>
+											<a href="<c:url value="/product?${view}page=" />${currentPage - 1 }" class="single-btn prev-btn ">
+												<i class="zmdi zmdi-chevron-left"></i>
+											</a>
+										</li>
 								<%  } %>
 
 								<%
 									for(int i = 1; i <= Integer.parseInt(request.getAttribute("totalPage").toString()); i++) {
 										if(i == Integer.parseInt(request.getAttribute("currentPage").toString())) { %>
-								<li class="active"><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
+											<li class="active"><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
 								<%
-								} else { %>
-								<li><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
+										} else { %>
+											<li><a href="<c:url value="/product?${view}page=" /><%= i %>" class="single-btn"><%= i %></a></li>
 								<%
 										}
 									}
@@ -188,17 +188,17 @@
 
 								<%
 									if(Integer.parseInt(request.getAttribute("currentPage").toString()) == Integer.parseInt(request.getAttribute("totalPage").toString())) { %>
-								<li>
-									<a class="single-btn next-btn ">
-										<i class="zmdi zmdi-chevron-right"></i>
-									</a>
-								</li>
+										<li>
+											<a class="single-btn next-btn ">
+												<i class="zmdi zmdi-chevron-right"></i>
+											</a>
+										</li>
 								<%	} else { %>
-								<li>
-									<a href="<c:url value="/product?${view}page=" />${currentPage + 1 }" class="single-btn next-btn ">
-										<i class="zmdi zmdi-chevron-right"></i>
-									</a>
-								</li>
+										<li>
+											<a href="<c:url value="/product?${view}page=" />${currentPage + 1 }" class="single-btn next-btn ">
+												<i class="zmdi zmdi-chevron-right"></i>
+											</a>
+										</li>
 								<%  } %>
 
 								<li>

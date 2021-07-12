@@ -28,7 +28,7 @@
 					<ul class="list-unstyled">
 						<li>Tác giả: <span class="list-value"> ${product.author}</span></li>
 						<li>Loại sách: <a href="<c:url value="/product?filter=" />${product.category.id}" class="list-value font-weight-bold">
-							${product.category.name}</a></li>
+								${product.category.name}</a></li>
 						<li>Nhà xuất bản: <a href="<c:url value="/product?filter=" />${product.publishingCompany.id}" class="list-value font-weight-bold">
 							${product.publishingCompany.name}</a></li>
 					</ul>
@@ -50,12 +50,12 @@
 					</div>
 					<div class="add-to-cart-row">
 						<div class="count-input-block">
-							<span class="widget-label">Số lượng</span> <input type="number"
-																			  class="form-control text-center" value="1">
+							<span class="widget-label">Số lượng</span>
+							<input id="quantity" type="number" class="form-control text-center" value="1">
 						</div>
-						<div class="add-cart-btn">
+						<div id="btnAddCart" class="add-cart-btn">
 							<a href="" class="btn btn-outlined--primary"><span
-									class="plus-icon">+</span>Thêm vào giỏ hàng</a>
+								class="plus-icon">+</span>Thêm vào giỏ hàng</a>
 						</div>
 					</div>
 				</div>
@@ -64,11 +64,11 @@
 		<div class="sb-custom-tab review-tab section-padding">
 			<ul class="nav nav-tabs nav-style-2" id="myTab2" role="tablist">
 				<li class="nav-item"><a class="nav-link active" id="tab1"
-										data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1"
-										aria-selected="true"> THÔNG TIN </a></li>
+					data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1"
+					aria-selected="true"> THÔNG TIN </a></li>
 				<li class="nav-item"><a class="nav-link" id="tab2"
-										data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
-										aria-selected="true"> ĐÁNH GIÁ (1) </a></li>
+					data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
+					aria-selected="true"> ĐÁNH GIÁ (1) </a></li>
 			</ul>
 			<div class="tab-content space-db--20" id="myTabContent">
 				<div class="tab-pane fade show active" id="tab-1" role="tabpanel"
@@ -123,7 +123,7 @@
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="name">Tên *</label> <input type="text" id="name"
-																				   class="form-control">
+												class="form-control">
 										</div>
 									</div>
 									<div class="col-lg-4">
@@ -135,7 +135,7 @@
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="website">Số điện thoại</label> <input type="text"
-																							  id="website" class="form-control">
+												id="website" class="form-control">
 										</div>
 									</div>
 									<div class="col-lg-4">

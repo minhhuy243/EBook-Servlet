@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <main class="cart-page-main-block inner-page-sec-padding-bottom">
 	<div class="cart_area cart-area-padding  ">
@@ -25,44 +26,36 @@
 										<th class="pro-subtotal">Tổng</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody id="productCartTable">
 									<!-- Product Row -->
-									<tr>
-										<td class="pro-remove"><a href="#"><i
-												class="far fa-trash-alt"></i></a></td>
-										<td class="pro-thumbnail"><a href="#"><img
-												src="image/products/product-1.jpg" alt="Product"></a></td>
-										<td class="pro-title"><a href="#">Rinosin Glasses</a></td>
-										<td class="pro-price"><span>$395.00</span></td>
-										<td class="pro-quantity">
-											<div class="pro-qty">
-												<div class="count-input-block">
-													<input type="number" class="form-control text-center"
-														value="1">
+									<c:forEach items="${sessionScope.productCartList}" var="productCart">
+										<tr>
+											<td class="pro-remove"><a data-id="${productCart.product.id}" href="#"><i
+													class="far fa-trash-alt"></i></a></td>
+											<td class="pro-thumbnail"><a href="<c:url value="/product/detail?id=" />${productCart.product.id}"><img
+													src="<c:url value="/assets/"/>${productCart.product.avatar}" alt="Product"></a></td>
+											<td class="pro-title"><a href="<c:url value="/product/detail?id=" />${productCart.product.id}">
+													${productCart.product.name}</a></td>
+											<td class="pro-price">
+												<span>
+													<fmt:formatNumber type="number" maxFractionDigits="3" value="${productCart.product.price}"/> VNĐ
+												</span>
+											</td>
+											<td class="pro-quantity">
+												<div class="pro-qty">
+													<div class="count-input-block">
+														<input data-id="${productCart.product.id}" type="number" class="form-control text-center"
+															   value="${productCart.quantity}">
+													</div>
 												</div>
-											</div>
-										</td>
-										<td class="pro-subtotal"><span>$395.00</span></td>
-									</tr>
-									<!-- Product Row -->
-									<tr>
-										<td class="pro-remove"><a href="#"><i
-												class="far fa-trash-alt"></i></a></td>
-										<td class="pro-thumbnail"><a href="#"><img
-												src="image/products/product-2.jpg" alt="Product"></a></td>
-										<td class="pro-title"><a href="#">Rinosin Glasses</a></td>
-										<td class="pro-price"><span>$395.00</span></td>
-										<td class="pro-quantity">
-											<div class="pro-qty">
-												<div class="count-input-block">
-													<input type="number" class="form-control text-center"
-														value="1">
-												</div>
-											</div>
-										</td>
-										<td class="pro-subtotal"><span>$395.00</span></td>
-									</tr>
-							
+											</td>
+											<td class="pro-subtotal">
+												<span>
+													<fmt:formatNumber type="number" maxFractionDigits="3" value="${productCart.quantity * productCart.product.price}"/> VNĐ
+												</span>
+											</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
@@ -83,17 +76,23 @@
 								<span>Giỏ Hàng</span>
 							</h4>
 							<p>
-								Tổng Tiền Sản Phẩm <span class="text-primary">$1250.00</span>
+								Tổng Tiền Sản Phẩm
+								<span id="totalPriceProductCart1" class="text-primary">
+									<fmt:formatNumber type="number" maxFractionDigits="3" value="${sessionScope.totalPrice}"/> VNĐ
+								</span>
 							</p>
 							<p>
-								Phí Vận Chuyển <span class="text-primary">$00.00</span>
+								Phí Vận Chuyển <span class="text-primary">Miễn phí</span>
 							</p>
 							<h2>
-								Tổng Cộng <span class="text-primary">$1250.00</span>
+								Tổng Cộng
+								<span id="totalPriceProductCart2" class="text-primary">
+									<fmt:formatNumber type="number" maxFractionDigits="3" value="${sessionScope.totalPrice}"/> VNĐ
+								</span>
 							</h2>
 						</div>
 						<div class="cart-summary-button">
-							<a href="checkout.html" class="checkout-btn c-btn btn--primary">Thanh Toán</a>
+							<a href="<c:url value="/checkout" />" class="checkout-btn c-btn btn--primary">Thanh Toán</a>
 						</div>
 					</div>
 				</div>

@@ -12,7 +12,11 @@ public class JspPathConst {
 	public static final String PRODUCT_LIST 		= "/WEB-INF/views/product/list-product.jsp";
 	public static final String PRODUCT_DETAIL 		= "/WEB-INF/views/product/detail.jsp";
 		
-	// SHOPPING
-	public static final String SHOPPING_CART 		= "/WEB-INF/views/shopping/cart.jsp";
-	public static final String SHOPPING_CHECKOUT 	= "/WEB-INF/views/shopping/checkout.jsp";
+	// CART
+	public static final String CART 				= "/WEB-INF/views/shopping/cart.jsp";
+
+	// CHECKOUT
+	public static final String CHECKOUT 			= "/WEB-INF/views/shopping/checkout.jsp";
+	public static final String CHECKOUT_COMPLETE	= "/WEB-INF/views/shopping/checkout-complete.jsp";
+
 }

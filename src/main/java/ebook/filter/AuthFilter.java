@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import ebook.model.User;
 import ebook.utils.UrlConst;
 
 @WebFilter(urlPatterns = "/*")
@@ -24,17 +25,17 @@ public class AuthFilter implements Filter{
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		
-		String email = (String) req.getSession().getAttribute("email");
+		User user = (User) req.getSession().getAttribute("user");
 		String path = req.getServletPath();		
 		
-		if(email != null) {
+		if(user != null) {
 			if(path.equals(UrlConst.AUTH_LOGIN) || path.equals(UrlConst.AUTH_REGISTER)) {
 				resp.sendRedirect(req.getContextPath() + UrlConst.HOME);
 			} else {
 				chain.doFilter(request, response);
 			}
 		} else {
-			if(path.equals(UrlConst.SHOPPING_CHECKOUT)) {
+			if(path.equals(UrlConst.CHECKOUT)) {
 				resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 			} else {
 				chain.doFilter(request, response);
