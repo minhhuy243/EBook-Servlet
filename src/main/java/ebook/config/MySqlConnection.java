@@ -1,5 +1,7 @@
 package ebook.config;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,16 +14,16 @@ public class MySqlConnection {
 	
 	public static Connection getConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			return DriverManager.getConnection(url, username, password);
-		} catch (ClassNotFoundException e) {
-			// TODO: 
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			return DriverManager.getConnection(url, username, password);
+			URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
+
+			String username = jdbUri.getUserInfo().split(":")[0];
+			String password = jdbUri.getUserInfo().split(":")[1];
+			String port = String.valueOf(jdbUri.getPort());
+			String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
+		} catch (URISyntaxException e) {
 			e.printStackTrace();
-			System.out.println("Driver could not be found.");
-		} catch (SQLException e) {
-			// TODO:
-			e.printStackTrace();
-			System.out.println("Can not connect to database.");
 		}
 		return null;
 	}
