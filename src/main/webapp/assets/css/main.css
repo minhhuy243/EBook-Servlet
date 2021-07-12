@@ -16511,9 +16511,9 @@ input[type="number"] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  justify-content: space-evenly  }
   .cart-widget .login-block {
-    margin-right: 27px;
     padding: 6px 0;
     text-align: left; }
 
@@ -16522,12 +16522,12 @@ input[type="number"] {
   .cart-block:before {
     content: "\f23d";
     font-family: "Font Awesome 5 Brands";
-    font-size: 34px;
+    font-size: 26px;
     color: #62ab00;
     display: inline-block;
     vertical-align: top;
     line-height: 1;
-    margin-right: 11px; }
+    margin-right: 8px; }
   .cart-block:hover .cart-dropdown-block {
     opacity: 1;
     pointer-events: visible; }

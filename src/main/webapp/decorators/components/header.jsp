@@ -1,19 +1,18 @@
+<%@ page import="ebook.model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="site-header d-none d-lg-block">
 	<div class="header-middle pt--10 pb--10">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-3 ">
-					<a href="index.html" class="site-brand"> <img
+					<a href="<c:url value="" />" class="site-brand"> <img
 						src="<c:url value="/assets/image/logo.png"/>" alt="">
 					</a>
-				</div>
-				<div class="col-lg-6">
-					
-				</div>
+				</div>			
 				<div class="col-lg-3">
 					<div class="header-phone ">
 						<div class="icon">
@@ -25,6 +24,23 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="col-lg-6">
+					<div class="main-navigation flex-lg-right">
+						<ul class="main-menu menu-right ">
+							<li class="menu-item">
+                            	<a href="<c:url value="" />">Trang chủ</a>                              
+                           	</li>
+                           	<li class="menu-item">
+                            	<a href="<c:url value="/product" />">Sản phẩm</a>                              
+                           	</li>
+                           	<li class="menu-item">
+                            	<a href="<c:url value="" />">Liên hệ</a>                              
+                           	</li>
+						</ul>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -138,24 +154,26 @@
 					</nav>
 				</div>
 				<div class="col-lg-5">
-					<div class="header-search-block">
-						<input type="text" placeholder="Tìm kiếm sách mong muốn ...">
-						<button>Tìm Kiếm</button>
-					</div>
+					<form method="GET" action="/EBook/product">
+						<div class="header-search-block">
+							<input  name="search" type="text" placeholder="Tìm kiếm sách mong muốn ...">
+							<button type="submit">Tìm Kiếm</button>
+						</div>
+					</form>
 				</div>
 				<div class="col-lg-4">
-					<div class="main-navigation flex-lg-right">
+					<div class="main-navigation flex-lg-evenly">
 						<div class="cart-widget">
 							<div class="login-block" style="font-size: 16px; width: 120px;">
 								<% 
-									Object firstName = session.getAttribute("firstName");
-									if(firstName == null) { %>
+									User user = (User) session.getAttribute("user");
+									if(user == null) { %>
 										<a href="<c:url value="/login" />" class="font-weight-bold">Đăng Nhập</a>
 										<br> <span>hoặc</span><a href="<c:url value="/register" />">Đăng Ký</a>	
 								<%  } else { %>
 										<ul class="header-top-list">
 											<li class="dropdown-trigger language-dropdown"><a href=""><i class="icons-left fas fa-user"></i>
-			                                        <%= firstName %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
+			                                        <%= user.getFirstName() %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
 			                                    <ul class="dropdown-box" style="width: 180px;">
 			                                        <li> <a href="">Thông tin tài khoản</a></li>
 			                                        <li> <a href="">Lịch sử mua hàng</a></li>
@@ -167,37 +185,41 @@
 							</div>
 							<div class="cart-block">
 								<div class="cart-total">
-									<span class="text-number"> 1 </span> <span class="text-item">
-										Giỏ Hàng </span> <span class="price"> 0 VNĐ <i
-										class="fas fa-chevron-down"></i>
+									<span class="text-number" id="totalProductCartHeader"> ${sessionScope.productCartList.size()} </span> <span class="text-item">
+										Giỏ Hàng </span>
+									<span class="price" id="totalPriceProductCartHeader">
+										<fmt:formatNumber type="number" maxFractionDigits="3" value="${sessionScope.totalPrice}" /> VNĐ
+										<i class="fas fa-chevron-down"></i>
 									</span>
 								</div>
 								<div class="cart-dropdown-block">
-									<div class=" single-cart-block ">
-										<div class="cart-product">
-											<a href="product-details.html" class="image"> <img
-												src="image/products/cart-product-1.jpg" alt="">
-											</a>
-											<div class="content">
-												<h3 class="title">
-													<a href="product-details.html">Kodak PIXPRO Astro Zoom
-														AZ421 16 MP</a>
-												</h3>
-												<p class="price">
-													<span class="qty">1 ×</span> £87.34
-												</p>
-												<button class="cross-btn">
-													<i class="fas fa-times"></i>
-												</button>
+									<div class=" single-cart-block " id="productCartHeader">
+										<c:forEach items="${sessionScope.productCartList}" var="productCart">
+											<div class="cart-product">
+												<a href="<c:url value="/product/detail?id=" />${productCart.product.id}" class="image"> <img
+														src="<c:url value="/assets/"/>${productCart.product.avatar}" alt="">
+												</a>
+												<div class="content">
+													<h3 class="title">
+														<a href="<c:url value="/product/detail?id=" />${productCart.product.id}">${productCart.product.name}</a>
+													</h3>
+													<p class="price">
+														<span class="qty">${productCart.quantity} ×</span>
+														<fmt:formatNumber type="number" maxFractionDigits="3" value="${productCart.product.price}"/> VNĐ
+													</p>
+													<button data-id="${productCart.product.id}" class="cross-btn">
+														<i class="fas fa-times"></i>
+													</button>
+												</div>
 											</div>
-										</div>
+										</c:forEach>
 									</div>
 									<div class=" single-cart-block ">
 										<div class="btn-block">
-											<a href="cart.html" class="btn">Xem Giỏ Hàng 
+											<a href="<c:url value="/cart" />" class="btn">Xem Giỏ Hàng
 												<i class="fas fa-chevron-right"></i>
 											</a> 
-											<a href="checkout.html" class="btn btn--primary">Thanh Toán 
+											<a href="<c:url value="/checkout" />" class="btn btn--primary">Thanh Toán
 												<i class="fas fa-chevron-right"></i>
 											</a>
 										</div>
@@ -512,142 +534,22 @@
 	<div class="container d-none d-lg-block">
 		<div class="row align-items-center">
 			<div class="col-lg-4">
-				<a href="index.html" class="site-brand"> <img
-					src="image/logo.png" alt="">
+				<a href="<c:url value="" />" class="site-brand"> <img
+					src="<c:url value="/assets/image/logo.png"/>" alt="">
 				</a>
 			</div>
 			<div class="col-lg-8">
 				<div class="main-navigation flex-lg-right">
 					<ul class="main-menu menu-right ">
-						<li class="menu-item has-children"><a
-							href="javascript:void(0)">Home <i
-								class="fas fa-chevron-down dropdown-arrow"></i></a>
-							<ul class="sub-menu">
-								<li><a href="index.html">Home One</a></li>
-								<li><a href="index-2.html">Home Two</a></li>
-								<li><a href="index-3.html">Home Three</a></li>
-								<li><a href="index-4.html">Home Four</a></li>
-								<li><a href="index-5.html">Home Five</a></li>
-							</ul></li>
-						<!-- Shop -->
-						<li class="menu-item has-children mega-menu"><a
-							href="javascript:void(0)">shop <i
-								class="fas fa-chevron-down dropdown-arrow"></i></a>
-							<ul class="sub-menu four-column">
-								<li class="cus-col-25">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Shop Grid </a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="shop-grid.html">Fullwidth</a></li>
-										<li><a href="shop-grid-left-sidebar.html">left
-												Sidebar</a></li>
-										<li><a href="shop-grid-right-sidebar.html">Right
-												Sidebar</a></li>
-									</ul>
-								</li>
-								<li class="cus-col-25">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Shop List</a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="shop-list.html">Fullwidth</a></li>
-										<li><a href="shop-list-left-sidebar.html">left
-												Sidebar</a></li>
-										<li><a href="shop-list-right-sidebar.html">Right
-												Sidebar</a></li>
-									</ul>
-								</li>
-								<li class="cus-col-25">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Product Details 1</a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="product-details.html">Product Details
-												Page</a></li>
-										<li><a href="product-details-affiliate.html">Product
-												Details Affiliate</a></li>
-										<li><a href="product-details-group.html">Product
-												Details Group</a></li>
-										<li><a href="product-details-variable.html">Product
-												Details Variables</a></li>
-									</ul>
-								</li>
-								<li class="cus-col-25">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Product Details 2</a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="product-details-left-thumbnail.html">left
-												Thumbnail</a></li>
-										<li><a href="product-details-right-thumbnail.html">Right
-												Thumbnail</a></li>
-										<li><a href="product-details-left-gallery.html">Left
-												Gallery</a></li>
-										<li><a href="product-details-right-gallery.html">Right
-												Gallery</a></li>
-									</ul>
-								</li>
-							</ul></li>
-						<!-- Pages -->
-						<li class="menu-item has-children"><a
-							href="javascript:void(0)">Pages <i
-								class="fas fa-chevron-down dropdown-arrow"></i></a>
-							<ul class="sub-menu">
-								<li><a href="cart.html">Cart</a></li>
-								<li><a href="checkout.html">Checkout</a></li>
-								<li><a href="compare.html">Compare</a></li>
-								<li><a href="wishlist.html">Wishlist</a></li>
-								<li><a href="login-register.html">Login Register</a></li>
-								<li><a href="my-account.html">My Account</a></li>
-								<li><a href="order-complete.html">Order Complete</a></li>
-								<li><a href="faq.html">Faq</a></li>
-								<li><a href="contact-2.html">contact 02</a></li>
-							</ul></li>
-						<!-- Blog -->
-						<li class="menu-item has-children mega-menu"><a
-							href="javascript:void(0)">Blog <i
-								class="fas fa-chevron-down dropdown-arrow"></i></a>
-							<ul class="sub-menu three-column">
-								<li class="cus-col-33">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Blog Grid</a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="blog.html">Full Widh (Default)</a></li>
-										<li><a href="blog-left-sidebar.html">left Sidebar</a></li>
-										<li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-									</ul>
-								</li>
-								<li class="cus-col-33">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Blog List </a>
-									</h3>
-									<ul class="mega-single-block">
-										<!-- <li><a href="blog-list.html">Full Widh (Default)</a></li> -->
-										<li><a href="blog-list-left-sidebar.html">left
-												Sidebar</a></li>
-										<li><a href="blog-list-right-sidebar.html">Right
-												Sidebar</a></li>
-									</ul>
-								</li>
-								<li class="cus-col-33">
-									<h3 class="menu-title">
-										<a href="javascript:void(0)">Blog Details</a>
-									</h3>
-									<ul class="mega-single-block">
-										<li><a href="blog-details.html">Image Format
-												(Default)</a></li>
-										<li><a href="blog-details-gallery.html">Gallery
-												Format</a></li>
-										<li><a href="blog-details-audio.html">Audio Format</a></li>
-										<li><a href="blog-details-video.html">Video Format</a></li>
-										<li><a href="blog-details-left-sidebar.html">left
-												Sidebar</a></li>
-									</ul>
-								</li>
-							</ul></li>
-						<li class="menu-item"><a href="contact.html">Contact</a></li>
+						<li class="menu-item">
+                            	<a href="<c:url value="" />">Trang chủ</a>                              
+                           	</li>
+                           	<li class="menu-item">
+                            	<a href="<c:url value="/product" />">Sản phẩm</a>                              
+                           	</li>
+                           	<li class="menu-item">
+                            	<a href="<c:url value="" />">Liên hệ</a>                              
+                           	</li>											
 					</ul>
 				</div>
 			</div>
