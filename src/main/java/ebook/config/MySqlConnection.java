@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class MySqlConnection {
 	/* database connection information */
-	private static final String url = "jdbc:mysql://us-cdbr-east-04.cleardb.com/heroku_79698f772917849";
+	private static final String url = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_79698f772917849";
 	private static final String username = "b6afcb701a72c4";
 	private static final String password = "c1707a61";
 	
