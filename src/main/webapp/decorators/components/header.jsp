@@ -24,7 +24,6 @@
 						</div>
 					</div>
 				</div>
-				
 				<div class="col-lg-6">
 					<div class="main-navigation flex-lg-right">
 						<ul class="main-menu menu-right ">
@@ -40,7 +39,6 @@
 						</ul>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -51,10 +49,10 @@
 					<nav class="category-nav   ">
 						<div>
 							<a href="javascript:void(0)" class="category-trigger"><i
-								class="fa fa-bars"></i>Danh mục sản phẩm</a>
+									class="fa fa-bars"></i>Danh mục sản phẩm</a>
 							<ul class="category-menu">
 								<li class="cat-item has-children"><a href="#">Arts &
-										Photography</a>
+									Photography</a>
 									<ul class="sub-menu">
 										<li><a href="#">Bags & Cases</a></li>
 										<li><a href="#">Binoculars & Scopes</a></li>
@@ -106,7 +104,7 @@
 										</li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Business
-										& Money</a>
+									& Money</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -121,7 +119,7 @@
 										<li><a href="">Spools</a></li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Children's
-										Books</a>
+									Books</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -146,9 +144,9 @@
 								<li class="cat-item "><a href="#">Accessories</a></li>
 								<li class="cat-item "><a href="#">Education</a></li>
 								<li class="cat-item hidden-menu-item"><a href="#">Indoor
-										Living</a></li>
+									Living</a></li>
 								<li class="cat-item"><a href="#"
-									class="js-expand-hidden-menu">More Categories</a></li>
+														class="js-expand-hidden-menu">More Categories</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -181,7 +179,9 @@
 			                                    </ul>
 			                                </li>
 										</ul>
-								<%  }  %>															
+									</li>
+								</ul>
+								<%  }  %>
 							</div>
 							<div class="cart-block">
 								<div class="cart-total">
@@ -239,17 +239,17 @@
 			<div class="row align-items-sm-end align-items-center">
 				<div class="col-md-4 col-7">
 					<a href="index.html" class="site-brand"> <img
-						src="image/logo.png" alt="">
+							src="image/logo.png" alt="">
 					</a>
 				</div>
 				<div class="col-md-5 order-3 order-md-2">
 					<nav class="category-nav   ">
 						<div>
 							<a href="javascript:void(0)" class="category-trigger"><i
-								class="fa fa-bars"></i>Browse categories</a>
+									class="fa fa-bars"></i>Browse categories</a>
 							<ul class="category-menu">
 								<li class="cat-item has-children"><a href="#">Arts &
-										Photography</a>
+									Photography</a>
 									<ul class="sub-menu">
 										<li><a href="#">Bags & Cases</a></li>
 										<li><a href="#">Binoculars & Scopes</a></li>
@@ -301,7 +301,7 @@
 										</li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Business
-										& Money</a>
+									& Money</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -316,7 +316,7 @@
 										<li><a href="">Spools</a></li>
 									</ul></li>
 								<li class="cat-item has-children"><a href="#">Children's
-										Books</a>
+									Books</a>
 									<ul class="sub-menu">
 										<li><a href="">Brake Tools</a></li>
 										<li><a href="">Driveshafts</a></li>
@@ -341,9 +341,9 @@
 								<li class="cat-item "><a href="#">Accessories</a></li>
 								<li class="cat-item "><a href="#">Education</a></li>
 								<li class="cat-item hidden-menu-item"><a href="#">Indoor
-										Living</a></li>
+									Living</a></li>
 								<li class="cat-item"><a href="#"
-									class="js-expand-hidden-menu">More Categories</a></li>
+														class="js-expand-hidden-menu">More Categories</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -352,9 +352,9 @@
 					<div class="mobile-header-btns header-top-widget">
 						<ul class="header-links">
 							<li class="sin-link"><a href="cart.html"
-								class="cart-link link-icon"><i class="ion-bag"></i></a></li>
+													class="cart-link link-icon"><i class="ion-bag"></i></a></li>
 							<li class="sin-link"><a href="javascript:"
-								class="link-icon hamburgur-icon off-canvas-btn"><i
+													class="link-icon hamburgur-icon off-canvas-btn"><i
 									class="ion-navicon"></i></a></li>
 						</ul>
 					</div>
@@ -394,77 +394,77 @@
 						<li class="menu-item-has-children"><a href="#">Blog</a>
 							<ul class="sub-menu">
 								<li class="menu-item-has-children"><a href="#">Blog
-										Grid</a>
+									Grid</a>
 									<ul class="sub-menu">
 										<li><a href="blog.html">Full Widh (Default)</a></li>
 										<li><a href="blog-left-sidebar.html">left Sidebar</a></li>
 										<li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Blog
-										List</a>
+									List</a>
 									<ul class="sub-menu">
 										<li><a href="blog-list.html">Full Widh (Default)</a></li>
 										<li><a href="blog-list-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="blog-list-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Blog
-										Details</a>
+									Details</a>
 									<ul class="sub-menu">
 										<li><a href="blog-details.html">Image Format
-												(Default)</a></li>
+											(Default)</a></li>
 										<li><a href="blog-details-gallery.html">Gallery
-												Format</a></li>
+											Format</a></li>
 										<li><a href="blog-details-audio.html">Audio Format</a></li>
 										<li><a href="blog-details-video.html">Video Format</a></li>
 										<li><a href="blog-details-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 							</ul></li>
 						<li class="menu-item-has-children"><a href="#">Shop</a>
 							<ul class="sub-menu">
 								<li class="menu-item-has-children"><a href="#">Shop
-										Grid</a>
+									Grid</a>
 									<ul class="sub-menu">
 										<li><a href="shop-grid.html">Fullwidth</a></li>
 										<li><a href="shop-grid-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="shop-grid-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Shop
-										List</a>
+									List</a>
 									<ul class="sub-menu">
 										<li><a href="shop-list.html">Fullwidth</a></li>
 										<li><a href="shop-list-left-sidebar.html">left
-												Sidebar</a></li>
+											Sidebar</a></li>
 										<li><a href="shop-list-right-sidebar.html">Right
-												Sidebar</a></li>
+											Sidebar</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Product
-										Details 1</a>
+									Details 1</a>
 									<ul class="sub-menu">
 										<li><a href="product-details.html">Product Details
-												Page</a></li>
+											Page</a></li>
 										<li><a href="product-details-affiliate.html">Product
-												Details Affiliate</a></li>
+											Details Affiliate</a></li>
 										<li><a href="product-details-group.html">Product
-												Details Group</a></li>
+											Details Group</a></li>
 										<li><a href="product-details-variable.html">Product
-												Details Variables</a></li>
+											Details Variables</a></li>
 									</ul></li>
 								<li class="menu-item-has-children"><a href="#">Product
-										Details 2</a>
+									Details 2</a>
 									<ul class="sub-menu">
 										<li><a href="product-details-left-thumbnail.html">left
-												Thumbnail</a></li>
+											Thumbnail</a></li>
 										<li><a href="product-details-right-thumbnail.html">Right
-												Thumbnail</a></li>
+											Thumbnail</a></li>
 										<li><a href="product-details-left-gallery.html">Left
-												Gallery</a></li>
+											Gallery</a></li>
 										<li><a href="product-details-right-gallery.html">Right
-												Gallery</a></li>
+											Gallery</a></li>
 									</ul></li>
 							</ul></li>
 						<li class="menu-item-has-children"><a href="#">Pages</a>
@@ -488,7 +488,7 @@
 			<nav class="off-canvas-nav">
 				<ul class="mobile-menu menu-block-2">
 					<li class="menu-item-has-children"><a href="#">Currency -
-							USD $ <i class="fas fa-angle-down"></i>
+						USD $ <i class="fas fa-angle-down"></i>
 					</a>
 						<ul class="sub-menu">
 							<li><a href="cart.html">USD $</a></li>
@@ -501,7 +501,7 @@
 							<li>Ban</li>
 						</ul></li>
 					<li class="menu-item-has-children"><a href="#">My Account
-							<i class="fas fa-angle-down"></i>
+						<i class="fas fa-angle-down"></i>
 					</a>
 						<ul class="sub-menu">
 							<li><a href="">My Account</a></li>

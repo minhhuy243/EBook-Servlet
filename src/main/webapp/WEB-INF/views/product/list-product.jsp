@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -13,12 +13,12 @@
 							<!-- Product View Mode -->
 							<div class="product-view-mode">
 								<a href="#" class="sorting-btn active" data-target="grid"><i
-									class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
-									data-target="grid-four"> <span class="grid-four-icon">
+										class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
+																	  data-target="grid-four"> <span class="grid-four-icon">
 										<i class="fas fa-grip-vertical"></i><i
-										class="fas fa-grip-vertical"></i>
+									class="fas fa-grip-vertical"></i>
 								</span>
-								</a> <a href="#" class="sorting-btn" data-target="list "><i
+							</a> <a href="#" class="sorting-btn" data-target="list "><i
 									class="fas fa-list"></i></a>
 							</div>
 						</div>
@@ -29,28 +29,28 @@
 							<div class="sorting-selection">
 								<span>Hiển thị:</span> <select
 									class="form-control nice-select sort-select">
-									<option value="" selected="selected">3</option>
-									<option value="">9</option>
-									<option value="">5</option>
-									<option value="">10</option>
-									<option value="">12</option>
-								</select>
+								<option value="" selected="selected">3</option>
+								<option value="">9</option>
+								<option value="">5</option>
+								<option value="">10</option>
+								<option value="">12</option>
+							</select>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
 							<div class="sorting-selection">
 								<span>Sắp xếp:</span> <select
 									class="form-control nice-select sort-select mr-0">
-									<option value="" selected="selected">Default Sorting</option>
-									<option value="">Sort By:Name (A - Z)</option>
-									<option value="">Sort By:Name (Z - A)</option>
-									<option value="">Sort By:Price (Low &gt; High)</option>
-									<option value="">Sort By:Price (High &gt; Low)</option>
-									<option value="">Sort By:Rating (Highest)</option>
-									<option value="">Sort By:Rating (Lowest)</option>
-									<option value="">Sort By:Model (A - Z)</option>
-									<option value="">Sort By:Model (Z - A)</option>
-								</select>
+								<option value="" selected="selected">Default Sorting</option>
+								<option value="">Sort By:Name (A - Z)</option>
+								<option value="">Sort By:Name (Z - A)</option>
+								<option value="">Sort By:Price (Low &gt; High)</option>
+								<option value="">Sort By:Price (High &gt; Low)</option>
+								<option value="">Sort By:Rating (Highest)</option>
+								<option value="">Sort By:Rating (Lowest)</option>
+								<option value="">Sort By:Model (A - Z)</option>
+								<option value="">Sort By:Model (Z - A)</option>
+							</select>
 							</div>
 						</div>
 					</div>
@@ -61,12 +61,12 @@
 							<!-- Product View Mode -->
 							<div class="product-view-mode">
 								<a href="#" class="sorting-btn active" data-target="grid"><i
-									class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
-									data-target="grid-four"> <span class="grid-four-icon">
+										class="fas fa-th"></i></a> <a href="#" class="sorting-btn"
+																	  data-target="grid-four"> <span class="grid-four-icon">
 										<i class="fas fa-grip-vertical"></i><i
-										class="fas fa-grip-vertical"></i>
+									class="fas fa-grip-vertical"></i>
 								</span>
-								</a> <a href="#" class="sorting-btn" data-target="list "><i
+							</a> <a href="#" class="sorting-btn" data-target="list "><i
 									class="fas fa-list"></i></a>
 							</div>
 						</div>
@@ -77,33 +77,33 @@
 							<div class="sorting-selection">
 								<span>Hiển thị:</span> <select
 									class="form-control nice-select sort-select">
-									<option value="" selected="selected">3</option>
-									<option value="">9</option>
-									<option value="">5</option>
-									<option value="">10</option>
-									<option value="">12</option>
-								</select>
+								<option value="" selected="selected">3</option>
+								<option value="">9</option>
+								<option value="">5</option>
+								<option value="">10</option>
+								<option value="">12</option>
+							</select>
 							</div>
 						</div>
 						<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
 							<div class="sorting-selection">
 								<span>Sắp xếp:</span> <select
 									class="form-control nice-select sort-select mr-0">
-									<option value="" selected="selected">Default Sorting</option>
-									<option value="">Sort By:Name (A - Z)</option>
-									<option value="">Sort By:Name (Z - A)</option>
-									<option value="">Sort By:Price (Low &gt; High)</option>
-									<option value="">Sort By:Price (High &gt; Low)</option>
-									<option value="">Sort By:Rating (Highest)</option>
-									<option value="">Sort By:Rating (Lowest)</option>
-									<option value="">Sort By:Model (A - Z)</option>
-									<option value="">Sort By:Model (Z - A)</option>
-								</select>
+								<option value="" selected="selected">Default Sorting</option>
+								<option value="">Sort By:Name (A - Z)</option>
+								<option value="">Sort By:Name (Z - A)</option>
+								<option value="">Sort By:Price (Low &gt; High)</option>
+								<option value="">Sort By:Price (High &gt; Low)</option>
+								<option value="">Sort By:Rating (Highest)</option>
+								<option value="">Sort By:Rating (Lowest)</option>
+								<option value="">Sort By:Model (A - Z)</option>
+								<option value="">Sort By:Model (Z - A)</option>
+							</select>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="shop-product-wrap grid with-pagination row space-db--30 shop-border">
 
 					<c:forEach items="${productList}" var="product">
@@ -146,7 +146,7 @@
 					</c:forEach>
 
 				</div>
-				
+
 				<!-- Pagination Block -->
 				<div class="row pt--30">
 					<div class="col-md-12">
@@ -223,7 +223,7 @@
 							</c:forEach>
 						</ul>
 					</div>
-			
+
 					<!-- Size -->
 					<div class="single-block">
 						<h3 class="sidebar-title">Nhà Xuất Bản</h3>
@@ -232,7 +232,7 @@
 								<li><a href="<c:url value="?filter=${publishingCompany.id}" />">${publishingCompany.name}</a></li>
 							</c:forEach>
 						</ul>
-					</div>								
+					</div>
 				</div>
 			</div>
 		</div>

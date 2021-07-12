@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -9,7 +9,7 @@
 			<div class="col-lg-5 mb--30">
 				<!-- Product Details Slider Big Image-->
 				<div class="product-details-slider sb-slick-slider arrow-type-two"
-					data-slick-setting='{
+					 data-slick-setting='{
               "slidesToShow": 1,
               "arrows": false,
               "fade": true,
@@ -72,14 +72,14 @@
 			</ul>
 			<div class="tab-content space-db--20" id="myTabContent">
 				<div class="tab-pane fade show active" id="tab-1" role="tabpanel"
-					aria-labelledby="tab1">
+					 aria-labelledby="tab1">
 					<article class="review-article">
 						<h1 class="sr-only">Tab Article</h1>
 						<p>${product.description}</p>
 					</article>
 				</div>
 				<div class="tab-pane fade" id="tab-2" role="tabpanel"
-					aria-labelledby="tab2">
+					 aria-labelledby="tab2">
 					<div class="review-wrapper">
 						<h2 class="title-lg mb--20">1 REVIEW FOR AUCTOR GRAVIDA ENIM</h2>
 						<div class="review-comment mb--20">
@@ -104,12 +104,12 @@
 						<div class="rating-row pt-2">
 							<p class="d-block">Số sao</p>
 							<span class="rating-widget-block"> <input type="radio"
-								name="star" id="star1"> <label for="star1"></label> <input
-								type="radio" name="star" id="star2"> <label for="star2"></label>
+																	  name="star" id="star1"> <label for="star1"></label> <input
+									type="radio" name="star" id="star2"> <label for="star2"></label>
 								<input type="radio" name="star" id="star3"> <label
-								for="star3"></label> <input type="radio" name="star" id="star4">
+										for="star3"></label> <input type="radio" name="star" id="star4">
 								<label for="star4"></label> <input type="radio" name="star"
-								id="star5"> <label for="star5"></label>
+																   id="star5"> <label for="star5"></label>
 							</span>
 							<form action="./" class="mt--15 site-form ">
 								<div class="row">
@@ -117,7 +117,7 @@
 										<div class="form-group">
 											<label for="message">Bình luận</label>
 											<textarea name="message" id="message" cols="30" rows="10"
-												class="form-control"></textarea>
+													  class="form-control"></textarea>
 										</div>
 									</div>
 									<div class="col-lg-4">
@@ -129,7 +129,7 @@
 									<div class="col-lg-4">
 										<div class="form-group">
 											<label for="email">Email *</label> <input type="text"
-												id="email" class="form-control">
+																					  id="email" class="form-control">
 										</div>
 									</div>
 									<div class="col-lg-4">
@@ -178,13 +178,13 @@
 				<h2>Sản Phẩm Liên Quan</h2>
 			</div>
 			<div class="product-slider sb-slick-slider slider-border-single-row"
-				data-slick-setting='{
+				 data-slick-setting='{
                 "autoplay": true,
                 "autoplaySpeed": 8000,
                 "slidesToShow": 4,
                 "dots":true
             }'
-				data-slick-responsive='[
+				 data-slick-responsive='[
                 {"breakpoint":1200, "settings": {"slidesToShow": 4} },
                 {"breakpoint":992, "settings": {"slidesToShow": 3} },
                 {"breakpoint":768, "settings": {"slidesToShow": 2} },
@@ -203,18 +203,18 @@
 								<img src="<c:url value="/assets/image/products/product-10.jpg" />" alt="">
 								<div class="hover-contents">
 									<a href="product-details.html" class="hover-image"> <img
-										src="<c:url value="/assets/image/products/product-1.jpg" />" alt="">
+											src="<c:url value="/assets/image/products/product-1.jpg" />" alt="">
 									</a>
 									<div class="hover-btns">
 										<a href="cart.html" class="single-btn"> <i
-											class="fas fa-shopping-basket"></i>
+												class="fas fa-shopping-basket"></i>
 										</a> <a href="wishlist.html" class="single-btn"> <i
 											class="fas fa-heart"></i>
-										</a> <a href="compare.html" class="single-btn"> <i
+									</a> <a href="compare.html" class="single-btn"> <i
 											class="fas fa-random"></i>
-										</a> <a href="#" data-toggle="modal" data-target="#quickModal"
+									</a> <a href="#" data-toggle="modal" data-target="#quickModal"
 											class="single-btn"> <i class="fas fa-eye"></i>
-										</a>
+									</a>
 									</div>
 								</div>
 							</div>
@@ -226,17 +226,17 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</section>
 	<!-- Modal -->
 	<div class="modal fade modal-quick-view" id="quickModal" tabindex="-1"
-		role="dialog" aria-labelledby="quickModal" aria-hidden="true">
+		 role="dialog" aria-labelledby="quickModal" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<button type="button" class="close modal-close-btn ml-auto"
-					data-dismiss="modal" aria-label="Close">
+						data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 				<div class="product-details-modal">
@@ -244,8 +244,8 @@
 						<div class="col-lg-5">
 							<!-- Product Details Slider Big Image-->
 							<div
-								class="product-details-slider sb-slick-slider arrow-type-two"
-								data-slick-setting='{
+									class="product-details-slider sb-slick-slider arrow-type-two"
+									data-slick-setting='{
               "slidesToShow": 1,
               "arrows": false,
               "fade": true,
@@ -271,8 +271,8 @@
 							</div>
 							<!-- Product Details Slider Nav -->
 							<div
-								class="mt--30 product-slider-nav sb-slick-slider arrow-type-two"
-								data-slick-setting='{
+									class="mt--30 product-slider-nav sb-slick-slider arrow-type-two"
+									data-slick-setting='{
             "infinite":true,
               "autoplay": true,
               "autoplaySpeed": 8000,
@@ -310,7 +310,7 @@
 								<ul class="list-unstyled">
 									<li>Ex Tax: <span class="list-value"> £60.24</span></li>
 									<li>Brands: <a href="#"
-										class="list-value font-weight-bold"> Canon</a></li>
+												   class="list-value font-weight-bold"> Canon</a></li>
 									<li>Product Code: <span class="list-value"> model1</span></li>
 									<li>Reward Points: <span class="list-value"> 200</span></li>
 									<li>Availability: <span class="list-value"> In
@@ -330,7 +330,7 @@
 									</div>
 									<div class="review-widget">
 										<a href="">(1 Reviews)</a> <span>|</span> <a href="">Write
-											a review</a>
+										a review</a>
 									</div>
 								</div>
 								<article class="product-details-article">
@@ -342,11 +342,11 @@
 								<div class="add-to-cart-row">
 									<div class="count-input-block">
 										<span class="widget-label">Qty</span> <input type="number"
-											class="form-control text-center" value="1">
+																					 class="form-control text-center" value="1">
 									</div>
 									<div class="add-cart-btn">
 										<a href="" class="btn btn-outlined--primary"><span
-											class="plus-icon">+</span>Add to Cart</a>
+												class="plus-icon">+</span>Add to Cart</a>
 									</div>
 								</div>
 								<div class="compare-wishlist-row">
@@ -366,7 +366,7 @@
 							<a href="#" class="single-icon"><i class="fab fa-twitter"></i></a>
 							<a href="#" class="single-icon"><i class="fab fa-youtube"></i></a>
 							<a href="#" class="single-icon"><i
-								class="fab fa-google-plus-g"></i></a>
+									class="fab fa-google-plus-g"></i></a>
 						</div>
 					</div>
 				</div>
