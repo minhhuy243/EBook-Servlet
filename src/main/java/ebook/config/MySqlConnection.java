@@ -15,12 +15,20 @@ public class MySqlConnection {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
+			String username, password, port, jdbUrl;
 
-			String username = jdbUri.getUserInfo().split(":")[0];
-			String password = jdbUri.getUserInfo().split(":")[1];
-			String port = String.valueOf(jdbUri.getPort());
-			String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
+			if(System.getenv("JAWSDB_URL") != null) {
+				URI jdbUri = new URI(System.getenv("JAWSDB_URL"));
+				username = jdbUri.getUserInfo().split(":")[0];
+				password = jdbUri.getUserInfo().split(":")[1];
+				port = String.valueOf(jdbUri.getPort());
+				jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
+			} else {
+				username = "root";
+				password = "";
+				jdbUrl = "jdbc:mysql://localhost:3306/ebook";
+			}
+
 			return DriverManager.getConnection(jdbUrl, username, password);
 		} catch (ClassNotFoundException e) {
 			// TODO:

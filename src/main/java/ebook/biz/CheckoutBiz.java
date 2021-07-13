@@ -1,5 +1,6 @@
 package ebook.biz;
 
+import ebook.dao.ProductDao;
 import ebook.dao.PurchaseDao;
 import ebook.dao.PurchaseDetailDao;
 import ebook.model.Product;
@@ -13,10 +14,12 @@ public class CheckoutBiz {
 
     private PurchaseDao purchaseDao;
     private PurchaseDetailDao purchaseDetailDao;
+    private ProductDao productDao;
 
     public CheckoutBiz() {
         this.purchaseDao = new PurchaseDao();
         this.purchaseDetailDao = new PurchaseDetailDao();
+        this.productDao = new ProductDao();
     }
 
     public Purchase save(Purchase purchase, List<ProductCart> productCartList) {
@@ -31,7 +34,12 @@ public class CheckoutBiz {
             purchaseDetail.setQuantity(productCart.getQuantity());
             purchaseDetail.setTotalAmount(productCart.getProduct().getPrice() * productCart.getQuantity());
             purchaseDetailDao.save(purchaseDetail);
+
+            int quantity = productCart.getProduct().getQuantity() - productCart.getQuantity();
+            productDao.updateByQuantity(productCart.getProduct().getId(), quantity);
         }
+
+
 
         return purchase;
     }

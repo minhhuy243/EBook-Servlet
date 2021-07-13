@@ -6,14 +6,12 @@ import ebook.model.Product;
 import ebook.model.PublishingCompany;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ProductDao {
+
     public List<Product> findAll(int offset, int limit) {
         Connection connection = MySqlConnection.getConnection();
         List<Product> productList = new LinkedList<>();
@@ -249,5 +247,28 @@ public class ProductDao {
         }
 
         return null;
+    }
+
+    public void updateByQuantity(int id, int quantity) {
+        Connection connection = MySqlConnection.getConnection();
+
+        try {
+            String query = "update product set quantity = ? where product_id = ?";
+
+            PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, quantity);
+            statement.setInt(2, id);
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
