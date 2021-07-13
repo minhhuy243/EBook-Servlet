@@ -82,8 +82,7 @@
 											<li class="dropdown-trigger language-dropdown"><a href=""><i class="icons-left fas fa-user"></i>
 			                                        <%= user.getFirstName() %></a><i class="fas fa-chevron-down dropdown-arrow"></i>
 			                                    <ul class="dropdown-box" style="width: 180px;">
-			                                        <li> <a href="">Thông tin tài khoản</a></li>
-			                                        <li> <a href="">Lịch sử mua hàng</a></li>
+			                                        <li> <a href="<c:url value="/user/profile" />">Thông tin tài khoản</a></li>
 			                                        <li> <a href="<c:url value="/logout" />">Đăng xuất</a></li>
 			                                    </ul>
 			                                </li>
