@@ -43,7 +43,7 @@
                                                     <span id="error-confirm-pwd" style="color: #ff0000; display: none; margin-top: 10px; margin-bottom: 10px;"></span>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button id="btnSubmit" class="btn btn--primary">Đổi mật khẩu</button>
+                                                    <button id="btnSubmit" class="btn btn--primary">Save Changes</button>
                                                 </div>
                                             </div>
                                         </form>
