@@ -52,7 +52,7 @@ public class AuthServlet extends HttpServlet{
 			
 			case UrlConst.AUTH_LOGOUT:
 				req.getSession().invalidate();
-				resp.sendRedirect(req.getContextPath() + UrlConst.HOME);
+				resp.sendRedirect(req.getContextPath() + "/");
 			default:
 				break;
 		}

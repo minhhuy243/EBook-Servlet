@@ -57,11 +57,11 @@
 	}
 	
 	$('#btnSubmit').on('click', async function () {
-		await axios.post('/EBook/login', {
+		await axios.post("<c:url value="/login" />", {
             email: $('#email').val(),
             password: $('#password').val()
         }).then((res) => {
-        	location.href = "/EBook";
+        	location.href = "<c:url value="/" />";
         }).catch((error) => {
         	removeErrors();
             const errors = error.response.data;

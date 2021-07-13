@@ -152,7 +152,7 @@
 					</nav>
 				</div>
 				<div class="col-lg-5">
-					<form method="GET" action="/EBook/product">
+					<form method="GET" action="<c:url value="/product" />">
 						<div class="header-search-block">
 							<input  name="search" type="text" placeholder="Tìm kiếm sách mong muốn ...">
 							<button type="submit">Tìm Kiếm</button>

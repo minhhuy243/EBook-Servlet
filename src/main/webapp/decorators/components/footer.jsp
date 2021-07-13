@@ -21,12 +21,12 @@
     function renderProductCartHeader(productCartList, totalPrice) {
         let html = productCartList.map((productCart) => {
             return '<div class="cart-product">' +
-                        '<a href="/EBook/product/detail?id=' + productCart.product.id + '"class="image">' +
-                            '<img src="/EBook/assets/' + productCart.product.avatar + '"alt="">' +
+                        '<a href="<c:url value="/product/detail?id=" />' + productCart.product.id + '"class="image">' +
+                            '<img src="<c:url value="/assets/" />' + productCart.product.avatar + '"alt="">' +
                         '</a>' +
                         '<div class="content">' +
                             '<h3 class="title">' +
-                                '<a href="/EBook/product/detail?id=' + productCart.product.id + '">' + productCart.product.name + '</a>' +
+                                '<a href="<c:url value="/product/detail?id=" />' + productCart.product.id + '">' + productCart.product.name + '</a>' +
                             '</h3>' +
                             '<p class="price">' +
                                 '<span class="qty">' + productCart.quantity + ' ×</span> ' + productCart.product.price.toLocaleString("it-IT") + ' VNĐ' +
@@ -48,9 +48,9 @@
         let html = productCartList.map((productCart) => {
             return '<tr>' +
                         '<td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>' +
-                        '<td class="pro-thumbnail"><a href="/EBook/product/detail?id="' + productCart.product.id + '">' +
-                            '<img src="/EBook/assets/' + productCart.product.avatar + '" alt="Product"></a></td>' +
-                        '<td class="pro-title"><a href="/product/detail?id="' + productCart.product.id + '">' +
+                        '<td class="pro-thumbnail"><a href="<c:url value="/product/detail?id=" />' + productCart.product.id + '">' +
+                            '<img src="<c:url value="/assets/" />' + productCart.product.avatar + '" alt="Product"></a></td>' +
+                        '<td class="pro-title"><a href="<c:url value="/product/detail?id="/>' + productCart.product.id + '">' +
 													productCart.product.name + '</a></td>' +
                         '<td class="pro-price">' +
                             '<span>' +
@@ -84,7 +84,7 @@
 
         $(".hover-btns a[data-id]").on("click", async function () { // Trang danh sách sản phẩm
             const id = $(this).data("id");
-            await axios.post('/EBook/cart/add', {
+            await axios.post("<c:url value="/cart/add" />", {
                 id: id
             }).then((res) => {
                 renderProductCartHeader(res.data.productCartList, res.data.totalPrice);
@@ -98,7 +98,7 @@
             const url = new URL(location.href);
             const id = url.searchParams.get("id");
             const quantity = $("#quantity").val();
-            await axios.post('/EBook/cart/add', {
+            await axios.post("<c:url value="/cart/add" />", {
                 id: id,
                 quantity: quantity
             }).then((res) => {
@@ -111,7 +111,7 @@
         $("body").on("blur", ".pro-quantity input[data-id]", async function () { // Trang giỏ hàng
             const id = $(this).data("id");
             const quantity = $(this).val();
-            await axios.post('/EBook/cart/add', {
+            await axios.post("<c:url value="/cart/add" />", {
                 id: id,
                 quantity: quantity,
                 update: 'true'
@@ -128,7 +128,7 @@
 
         $("body").on("click", ".cart-product button[data-id]", async function () { // header
             const id = $(this).data("id");
-            await axios.post('/EBook/cart/delete', {
+            await axios.post("<c:url value="/cart/delete" />", {
                 id: id
             }).then((res) => {
                 renderProductCartHeader(res.data.productCartList, res.data.totalPrice);
@@ -139,7 +139,7 @@
 
         $("body").on("click", ".pro-remove a[data-id]", async function () { // Trang giỏ hàng
             const id = $(this).data("id");
-            await axios.post('/EBook/cart/delete', {
+            await axios.post("<c:url value="/cart/delete" />", {
                 id: id
             }).then((res) => {
                 renderProductCartHeader(res.data.productCartList, res.data.totalPrice);

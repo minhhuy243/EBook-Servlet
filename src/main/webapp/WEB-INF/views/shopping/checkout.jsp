@@ -22,7 +22,7 @@
 								<div class="col-lg-7 mb--20">
 									<div id="billing-form" class="mb-40">
 										<h4 class="checkout-title">Thông Tin Thanh Toán</h4>
-										<form id="frmCheckout" method="POST" action="/EBook/checkout">
+										<form id="frmCheckout" method="POST" action="<c:url value="/checkout" />">
 											<div class="row">
 												<div class="col-12 mb--20">
 													<label>Tên</label>

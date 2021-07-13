@@ -113,7 +113,7 @@
 	}
 
 	$('#btnSubmit').on('click', async function () {
-		await axios.post('/EBook/register', {
+		await axios.post("<c:url value="/register" />", {
             email: $('#email').val(),
             password: $('#password').val(),
             lastName: $('#last-name').val(),
@@ -135,7 +135,7 @@
                 confirmButtonText: 'OK'
             }).then((result) => {
                 if (result.isConfirmed) {
-                	location.href = "/EBook";
+					location.href = "<c:url value="/" />";
                 }
             })
         }).catch((error) => {
