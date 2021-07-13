@@ -9,7 +9,7 @@ import java.sql.Statement;
 import ebook.config.MySqlConnection;
 import ebook.model.User;
 
-public class AuthDao {
+public class UserDao {
 	
 	public User findByEmail(String email) {
 		Connection connection = MySqlConnection.getConnection();
@@ -108,6 +108,32 @@ public class AuthDao {
 			}
 		}
 		
+		return result;
+	}
+
+	public int updatePasswordByEmail(User user) {
+		int result = -1;
+		Connection connection = MySqlConnection.getConnection();
+
+		try {
+			String query = "update user set password = ? where email = ?";
+
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, user.getPassword());
+			statement.setString(2, user.getEmail());
+
+			result = statement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 		return result;
 	}
 }

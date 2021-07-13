@@ -12,15 +12,14 @@
 					</div>
 					<div class="footer-contact">
 						<p>
-							<span class="label">Address:</span><span class="text">Example
-								Street 98, HH2 BacHa, New York, USA</span>
+							<span class="label">Địa chỉ:</span><span class="text">227 Nguyễn Văn Cừ, Phường 4, Quận 5,
+						Thành phố Hồ Chí Minh</span>
 						</p>
 						<p>
-							<span class="label">Phone:</span><span class="text">+18088
-								234 5678</span>
+							<span class="label">Điện thoại:</span><span class="text">+1900 6969</span>
 						</p>
 						<p>
-							<span class="label">Email:</span><span class="text">suport@hastech.com</span>
+							<span class="label">Email:</span><span class="text">ldb@gmail.com</span>
 						</p>
 					</div>
 				</div>

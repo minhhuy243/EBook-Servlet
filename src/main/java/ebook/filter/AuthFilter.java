@@ -35,7 +35,7 @@ public class AuthFilter implements Filter{
 				chain.doFilter(request, response);
 			}
 		} else {
-			if(path.equals(UrlConst.CHECKOUT)) {
+			if(path.equals(UrlConst.CHECKOUT) || path.equals(UrlConst.USER_PROFILE)) {
 				resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 			} else {
 				chain.doFilter(request, response);

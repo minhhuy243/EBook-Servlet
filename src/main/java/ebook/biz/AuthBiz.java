@@ -2,14 +2,14 @@ package ebook.biz;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import ebook.dao.AuthDao;
+import ebook.dao.UserDao;
 import ebook.model.User;
 
 public class AuthBiz {
-	private AuthDao dao;
+	private UserDao dao;
 	
 	public AuthBiz() {
-		this.dao = new AuthDao();
+		this.dao = new UserDao();
 	}
 	
 	public User findByEmail(String email) {
