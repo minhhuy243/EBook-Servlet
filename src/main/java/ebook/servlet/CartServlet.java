@@ -85,39 +85,45 @@ public class CartServlet extends HttpServlet{
 					}
 				}
 
+				int oldQuantity = -1;
 				if(productCart != null) { // Có tồn tại thì cộng thêm số lượng mới
+					oldQuantity = productCart.getQuantity();
 					if(update) { // Nếu có yêu cầu cập nhật lại số lượng ở trang giỏ hàng
-						totalPrice -= productCart.getProduct().getPrice() * productCart.getQuantity();
 						productCart.setQuantity(quantity);
 					} else {
-						int oldQuantity = productCart.getQuantity();
 						productCart.setQuantity(oldQuantity + quantity);
 					}
-					//totalPrice += productCart.getProduct().getPrice() * quantity;
 				} else {
 					productCart = new ProductCart();
 					productCart.setProduct(productBiz.findById(id));
 					productCart.setQuantity(quantity);
-					if(productCart.getProduct().getQuantity() > 0)
+					if(productCart.getProduct().getQuantity() > 0) {
 						productCartList.add(productCart);
-
-					//totalPrice += productCart.getProduct().getPrice() * quantity;
+					} else {
+						results.put("errorQuantity", "Sản phẩm đã hết hàng");
+						resp.setStatus(400);
+					}
 				}
-				totalPrice += productCart.getProduct().getPrice() * quantity;
 
 				// Kiểm tra số lượng hiện tại với số lượng trong kho
 				if(productCart.getQuantity() > productCart.getProduct().getQuantity()) { // Nếu lớn hơn số lượng trong kho
-					results.put("errorQuantity", "Số lượng sản phẩm vượt quá số lượng tồn kho");
+					productCart.setQuantity(oldQuantity);
+					if(!results.containsKey("errorQuantity"))
+						results.put("errorQuantity", "Số lượng sản phẩm vượt quá số lượng tồn kho");
 					resp.setStatus(400);
 				} else {
-					//totalPrice += product.getPrice() * quantity;
-					results.put("productCartList", productCartList);
-					results.put("totalPrice", totalPrice);
+					if(update) {
+						totalPrice -= productCart.getProduct().getPrice() * oldQuantity;
+						totalPrice += productCart.getProduct().getPrice() * quantity;
+					} else {
+						totalPrice += productCart.getProduct().getPrice() * quantity;
+					}
 					session.setAttribute("totalPrice", totalPrice);
 					session.setAttribute("productCartList", productCartList);
 					resp.setStatus(200);
 				}
-
+				results.put("productCartList", productCartList);
+				results.put("totalPrice", totalPrice);
 				json = gson.toJson(results);
 				out.write(json);
 				out.flush();

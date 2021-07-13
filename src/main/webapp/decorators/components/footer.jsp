@@ -105,6 +105,7 @@
                 renderProductCartHeader(res.data.productCartList, res.data.totalPrice);
             }).catch((error) => {
                 showError(error.response.data);
+                renderProductCartHeader(error.response.data.productCartList, error.response.data.totalPrice);
             });
         });
 
@@ -120,6 +121,8 @@
                 renderProductCart(res.data.productCartList, res.data.totalPrice);
             }).catch((error) => {
                 showError(error.response.data);
+                renderProductCartHeader(error.response.data.productCartList, error.response.data.totalPrice);
+                renderProductCart(error.response.data.productCartList, error.response.data.totalPrice);
             });
         });
 
