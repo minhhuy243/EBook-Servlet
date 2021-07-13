@@ -271,4 +271,39 @@ public class ProductDao {
             }
         }
     }
+
+    public List<Product> findTop10() {
+        Connection connection = MySqlConnection.getConnection();
+        List<Product> productList = new LinkedList<>();
+
+        try {
+            String query = "select product_id, name, author, price, avatar from product order by date desc limit 0, 10";
+
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+
+                product.setId(rs.getInt("product_id"));
+                product.setName(rs.getString("name"));
+                product.setAuthor(rs.getString("author"));
+                product.setPrice(rs.getInt("price"));
+                product.setAvatar(rs.getString("avatar"));
+
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return productList;
+    }
+
 }

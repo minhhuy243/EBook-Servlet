@@ -80,4 +80,8 @@ public class ProductBiz {
         return product;
     }
 
+    // Home
+    public List<Product> findTop10() {
+        return productDao.findTop10();
+    }
 }
