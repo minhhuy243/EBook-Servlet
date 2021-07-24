@@ -47,7 +47,7 @@
     function renderProductCart(productCartList, totalPrice) {
         let html = productCartList.map((productCart) => {
             return '<tr>' +
-                        '<td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a></td>' +
+                        '<td class="pro-remove"><a href="#" data-id="' + productCart.product.id + '"><i class="far fa-trash-alt"></i></a></td>' +
                         '<td class="pro-thumbnail"><a href="<c:url value="/product/detail?id=" />' + productCart.product.id + '">' +
                             '<img src="<c:url value="/assets/" />' + productCart.product.avatar + '" alt="Product"></a></td>' +
                         '<td class="pro-title"><a href="<c:url value="/product/detail?id="/>' + productCart.product.id + '">' +
@@ -135,6 +135,7 @@
                 id: id
             }).then((res) => {
                 renderProductCartHeader(res.data.productCartList, res.data.totalPrice);
+                renderProductCart(res.data.productCartList, res.data.totalPrice);
             }).catch((error) => {
                 showError(error.response.data);
             });
